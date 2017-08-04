@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Button
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	self.set_process(true)
+	pass
+	
+func _process(delta):
+	if (self.is_hovered()):
+		self.set_pos(Vector2(randf() * 950, randf() * 550))
+	pass"
+
+[node name="Node" type="Node"]
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 441.0
+margin/top = 258.0
+margin/right = 548.0
+margin/bottom = 319.0
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "Finish"
+flat = false
+script/script = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 163.0
+margin/top = 566.0
+margin/right = 659.0
+margin/bottom = 580.0
+text = "A real game developer is known not by how they start, but by how they finish."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
